@@ -1,0 +1,23 @@
+Useless Box design notes
+
+Concept was to fit a folding finger mechanism with an additinal point of articulation into a 
+shallow box while remaining strong enough to push the switch.
+
+See open scad file for various failed iterations that ended up with a co-axial mechanism 
+where one servo drove two curved arms to lift finger into position while second servo motor 
+drove a pivoting lever that in turn offered a limited range of finger motion, independant
+of lift position.
+
+Due to leverage effects and loose tolerances in the 3D printed parts switch had to be
+modified by removal of one of two spring plates to allow switching
+
+Early designs had a postive locking lid. Discarded when the potential for any software bug
+to prevent access to USB port for reprograming became apparent. Final result simply turns a
+cam that lifts lid against gravity rather than being bolted to the lid via a lever
+
+Power control was attempted through various direct FET drive methods but was constrained
+by limited 3.3V power from micro controller. Expensive but effective solution achieved 
+through a COTS Polulo power switch PCB intended for toggle operation. While no schematic 
+was provided tracing of layout indicated that pulling low one side of the toggle switch
+acted to latch 'on' while the existing latch 'off' was used to power down the servos
+and micro controller once timeout from user interaction had expired.
